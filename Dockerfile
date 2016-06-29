@@ -13,6 +13,9 @@ ENV JAVA_HOME /usr/lib/jvm/java-7-openjdk-amd64
 COPY ./conf/zoo.cfg /opt/zookeeper/conf/zoo.cfg
 RUN cat /opt/zookeeper/conf/zoo.cfg
 
+RUN mkdir /tmp/zookeeper
+COPY ./conf/myid /tmp/zookeeper/myid
+
 EXPOSE 2181 2888 3888
 
 WORKDIR /opt/zookeeper
